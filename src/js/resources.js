@@ -1,10 +1,14 @@
 import { ImageSource, Sound, Resource, Loader } from 'excalibur'
+import { HealthPack } from './healthPack'
 
 // Voeg hier jouw eigen resources toe
 const Resources = {
     Ship: new ImageSource('images/ship.png'),
     Obstacle: new ImageSource('images/obstacle.png'),
-    Enemy: new ImageSource('images/enemy.png')
+    Enemy: new ImageSource('images/enemy.png'),
+    Bomb: new ImageSource('images/bomb.png'),
+    Background: new ImageSource('images/background.jpg'),
+    Explosion: new ImageSource('images/explosion.png')
 }
 
 const ResourceLoader = new Loader()
