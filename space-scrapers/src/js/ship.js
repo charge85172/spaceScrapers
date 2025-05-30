@@ -11,9 +11,8 @@ export class Ship extends Actor {
         })
         this.playerNumber = playerNumber
         this.health = 3
-        // Player 1 should be on the left, Player 2 on the right
         this.pos = playerNumber === 1 ? new Vector(100, 300) : new Vector(500, 300)
-        this.vel = new Vector(0, 0) // Always reset velocity on spawn
+        this.vel = new Vector(0, 0)
     }
 
     onInitialize(engine) {
@@ -25,7 +24,6 @@ export class Ship extends Actor {
     handleCollision(event) {
         const other = event.other.owner
         if (other && (other.constructor.name === "Enemy" || other.constructor.name === "Obstacle")) {
-            // Spawn explosion at the enemy/obstacle position
             if (other.pos && this.scene) {
                 const explosion = new Explosion(other.pos)
                 this.scene.add(explosion)
@@ -47,7 +45,6 @@ export class Ship extends Actor {
     onPreUpdate() {
         let xspeed = 0
         let yspeed = 0
-        // Controls for each player
         if (this.playerNumber === 1) {
             if (this.keyboard.isHeld(Keys.W)) yspeed = -250
             if (this.keyboard.isHeld(Keys.S)) yspeed = 250
@@ -69,7 +66,6 @@ export class Ship extends Actor {
                 this.scene.add(bullet)
             }
         }
-        // Clamp position to stay inside the screen
         const minX = this.width / 2
         const maxX = 512 - this.width / 2
         const minY = this.height / 2

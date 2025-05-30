@@ -1,0 +1,24 @@
+{
+  "name": "space-scrapers",
+  "version": "1.0.0",
+  "description": "A space-themed game built with ExcaliburJS.",
+  "main": "src/js/game.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [
+    "excaliburjs",
+    "game",
+    "javascript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "excalibur": "^0.25.0"
+  },
+  "devDependencies": {
+    "vite": "^2.0.0"
+  }
+}
